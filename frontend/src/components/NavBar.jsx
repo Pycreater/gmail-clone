@@ -25,7 +25,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="w-[50%]">
-        <div className="flex items-center bg-[#EAF1FB] px-2 py-3 rounded-full">
+        <div className="flex items-center bg-[#EAF1FB] px-2 py-3 rounded-full focus-within:bg-white focus-within:shadow-md">
           <IoSearch
             size={"24px"}
             className="text-gray-700 hover:bg-gray-200 rounded-full cursor-pointer"

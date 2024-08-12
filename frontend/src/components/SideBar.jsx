@@ -42,7 +42,7 @@ const SideBar = () => {
           Compose
         </button>
       </div>
-      <div className="text-gray-500">
+      <div className="text-gray-600">
         {sideBarItems.map((item, index) => {
           return (
             <div

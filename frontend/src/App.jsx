@@ -1,11 +1,15 @@
+import InBox from "./components/InBox";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div>
+    <div className="bg-[#F6F8FC] h-screen">
       <NavBar />
-      <SideBar />
+      <div className="flex">
+        <SideBar />
+        <InBox />
+      </div>
     </div>
   );
 }

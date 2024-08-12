@@ -8,6 +8,7 @@ import { IoMdRefresh, IoMdMore } from "react-icons/io";
 import { FaKeyboard } from "react-icons/fa6";
 import { GoPeople, GoTag } from "react-icons/go";
 import { useState } from "react";
+import Emails from "./Emails";
 
 const mailType = [
   {
@@ -75,6 +76,7 @@ const InBox = () => {
             );
           })}
         </div>
+        <Emails />
       </div>
     </div>
   );

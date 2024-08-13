@@ -3,6 +3,7 @@ import InBox from "./components/InBox";
 import Mail from "./components/Mail";
 import NavBar from "./components/NavBar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SendEmail from "./components/SendEmail";
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ function App() {
     <div className="bg-[#F6F8FC] h-screen">
       <NavBar />
       <RouterProvider router={appRouter} />
+      <div className="absolute w-[30%] bottom-0 right-20 z-10">
+        <SendEmail />
+      </div>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { FiClock } from "react-icons/fi";
 import { FaLocationArrow } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdOutlineDrafts } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../redux/appSlice";
 
 const sideBarItems = [
   {
@@ -34,10 +36,14 @@ const sideBarItems = [
 ];
 
 const SideBar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="w-[15%]">
       <div className="p-3">
-        <button className="flex items-center gap-2 bg-[#C2E7FF] p-4 rounded-2xl hover:shadow-md">
+        <button
+          onClick={() => dispatch(setOpen(true))}
+          className="flex items-center gap-2 bg-[#C2E7FF] p-4 rounded-2xl hover:shadow-md"
+        >
           <LuPencil size={"24px"} />
           Compose
         </button>

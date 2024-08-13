@@ -76,7 +76,25 @@ const Mail = () => {
           </div>
         </div>
       </div>
-      <div className=""></div>
+      <div className="h-[90vh] overflow-y-auto p-4">
+        <div className="flex justify-between bg-white items-center gap-1">
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl font-medium">Subject</h1>
+            <span className="text-sm bg-gray-200 p-1 rounded-lg">Inbox x</span>
+          </div>
+          <div className="flex-none text-gray-400 my-5 text-sm">
+            <p>12:35 PM (1 hour ago)</p>
+          </div>
+        </div>
+        <div className="text-gray-500 text-sm">
+          <h1>pratikyadav3949@gmail.com</h1>
+          <span>to me</span>
+        </div>
+        <div className="my-10">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+          incidunt magnam reprehenderit vel maxime animi obcaecati.
+        </div>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import Mail from "./components/Mail";
 import NavBar from "./components/NavBar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SendEmail from "./components/SendEmail";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 const appRouter = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const appRouter = createBrowserRouter([
         element: <Mail />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 

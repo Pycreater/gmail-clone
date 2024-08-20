@@ -6,13 +6,17 @@ const emailSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Subject: {
+    subject: {
       type: String,
       required: true,
     },
     message: {
       type: String,
       required: true,
+    },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   { timestamps: true }

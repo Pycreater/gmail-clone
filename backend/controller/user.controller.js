@@ -67,21 +67,28 @@ const login = async (req, res) => {
 
     const userId = user._id;
 
-    const token = await jwt.sign(userId, process.env.SECRET_KEY, {
+    const token = await jwt.sign({ userId }, process.env.SECRET_KEY, {
       expiresIn: "1d",
     });
 
-    const httpOptions = {
-      httpOnly: true,
-    };
-
     return res
       .status(200)
-      .cookie("token", token, httpOptions)
+      .cookie("token", token)
       .json({ message: "Logged In Successfully", success: true });
   } catch (error) {
     console.log(error);
   }
 };
 
-export { register, login };
+const logout = async (req, res) => {
+  try {
+    return res
+      .status(200)
+      .cookie("token", "", { maxAge: 0 })
+      .json({ message: "logged out successfully", success: true });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { register, login, logout };

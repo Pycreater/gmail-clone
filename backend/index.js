@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRouter from "./route/user.route.js";
+import emailRouter from "./route/email.route.js";
 
 dotenv.config({
   path: "./.env",
@@ -24,6 +25,7 @@ app.use(
 
 //routes
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/email", emailRouter);
 
 app.listen(process.env.PORT || 8000, () => {
   console.log(`server is running on port - ${process.env.PORT}`);

@@ -5,9 +5,11 @@ import { FcSettings } from "react-icons/fc";
 import { GrApps } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import { IoFilterOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
-  const user = true;
+  const { user } = useSelector((store) => store.app);
+
   return (
     <div className="flex items-center justify-between mx-3 h-16">
       <div className="flex items-center gap-10">

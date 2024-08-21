@@ -1,12 +1,16 @@
 import { IoIosStarOutline } from "react-icons/io";
 import { MdCropSquare } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setSelectedEmail } from "../redux/appSlice";
 
-const Email = () => {
+const Email = ({ email }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const openMail = () => {
-    navigate("/mail/hhhs");
+    dispatch(setSelectedEmail(email));
+    navigate(`/mail/${email._id}`);
   };
 
   return (
@@ -22,12 +26,10 @@ const Email = () => {
           <IoIosStarOutline size={"20px"} />
         </div>
         <div>
-          <h1 className="font-semibold">Pratik</h1>
+          <h1 className="font-semibold">{email?.subject}</h1>
         </div>
       </div>
-      <div className="flex-1 ml-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cupiditate
-      </div>
+      <div className="flex-1 ml-4">{email?.message}</div>
       <div className="flex-none text-sm">
         <p className="font-bold text-sm">6:23 AM</p>
       </div>

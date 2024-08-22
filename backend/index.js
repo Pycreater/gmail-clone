@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://gmail-clone-mu-eight.vercel.app",
+    origin: process.env.REACT_URI,
     credentials: true,
   })
 );

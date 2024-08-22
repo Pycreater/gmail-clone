@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { formatDistanceToNow } from "date-fns";
+import { BASE_URI } from "../../constant";
 
 const arr2 = [
   {
@@ -33,12 +34,9 @@ const Mail = () => {
 
   const deleteHandler = async () => {
     try {
-      const response = await axios.delete(
-        `http://localhost:8080/api/v1/email/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.delete(`${BASE_URI}/api/v1/email/${id}`, {
+        withCredentials: true,
+      });
 
       if (response.data.success) {
         toast.success(response.data.message);

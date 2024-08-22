@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setAuthUser } from "../redux/appSlice";
+import { BASE_URI } from "../../constant";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -24,7 +25,7 @@ const Login = () => {
     console.log(input);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        `${BASE_URI}/api/v1/user/login`,
         input,
         {
           headers: {

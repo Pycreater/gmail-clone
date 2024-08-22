@@ -4,6 +4,7 @@ import { setEmails, setOpen } from "../redux/appSlice";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { BASE_URI } from "../../constant";
 
 const SendEmail = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const SendEmail = () => {
     // console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/email/create",
+        `${BASE_URI}/api/v1/email/create`,
         formData,
         {
           headers: {

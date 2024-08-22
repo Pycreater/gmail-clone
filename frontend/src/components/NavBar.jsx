@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { setAuthUser, setSearchText } from "../redux/appSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BASE_URI } from "../../constant";
 // import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -21,9 +22,7 @@ const NavBar = () => {
 
   const logoutHandler = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8000/api/v1/user/logout"
-      );
+      const response = await axios.get(`${BASE_URI}/api/v1/user/logout`);
       if (response.data.success) {
         toast.success(response.data.message);
         dispatch(setAuthUser(null));

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BASE_URI } from "../../constant";
 
 const Signup = () => {
   const [input, setInput] = useState({
@@ -21,7 +22,7 @@ const Signup = () => {
     console.log(input);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/register",
+        `${BASE_URI}/api/v1/user/register`,
         input,
         {
           headers: {

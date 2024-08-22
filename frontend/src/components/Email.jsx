@@ -3,6 +3,7 @@ import { MdCropSquare } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSelectedEmail } from "../redux/appSlice";
+import { formatDistanceToNow } from "date-fns";
 
 const Email = ({ email }) => {
   const navigate = useNavigate();
@@ -31,7 +32,9 @@ const Email = ({ email }) => {
       </div>
       <div className="flex-1 ml-4">{email?.message}</div>
       <div className="flex-none text-sm">
-        <p className="font-bold text-sm">6:23 AM</p>
+        <p className="font-bold text-sm">
+          {formatDistanceToNow(new Date(email?.createdAt), { addSuffix: true })}
+        </p>
       </div>
     </div>
   );

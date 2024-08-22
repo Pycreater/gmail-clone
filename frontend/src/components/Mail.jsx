@@ -12,6 +12,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { formatDistanceToNow } from "date-fns";
 
 const arr2 = [
   {
@@ -110,7 +111,11 @@ const Mail = () => {
             <span className="text-sm bg-gray-200 p-1 rounded-lg">Inbox x</span>
           </div>
           <div className="flex-none text-gray-400 my-5 text-sm">
-            <p>12:35 PM (1 hour ago)</p>
+            <p>
+              {formatDistanceToNow(new Date(selectedEmail?.createdAt), {
+                addSuffix: true,
+              })}
+            </p>
           </div>
         </div>
         <div className="text-gray-500 text-sm">
